@@ -1,5 +1,6 @@
 package pebite.Ponitor_BE.controller;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import pebite.Ponitor_BE.dto.UsersLoginResDto;
 import pebite.Ponitor_BE.exception.AuthenticationException;
 import pebite.Ponitor_BE.service.UserService;
@@ -19,14 +20,12 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 @Slf4j
-
+@CrossOrigin(origins = "http://43.200.29.57:8080",allowedHeaders = "*")
 @RestController
 @RequiredArgsConstructor
 public class UserController {
-
     @Autowired
     UserService userService;
-
     @GetMapping(value = "/users/login", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity login(@RequestParam(name = "username") @NotNull @NotEmpty @NotBlank String username,
                                 @RequestParam(name = "password") @NotNull @NotEmpty @NotBlank String password,
