@@ -6,7 +6,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import pebite.Ponitor_BE.model.Users;
-import pebite.Ponitor_BE.repository.users.UsersRepository;
+import pebite.Ponitor_BE.repository.UsersRepository;
 
 import java.util.Optional;
 

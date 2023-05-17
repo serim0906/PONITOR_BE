@@ -1,4 +1,4 @@
-package pebite.Ponitor_BE.security;
+package pebite.Ponitor_BE.config;
 
 
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +15,7 @@ import pebite.Ponitor_BE.security.JwtAccessDeniedHandler;
 import pebite.Ponitor_BE.security.JwtAuthenticationEntryPoint;
 import pebite.Ponitor_BE.security.JwtSecurityConfigurer;
 import pebite.Ponitor_BE.security.JwtTokenProvider;
+
 
 @Slf4j
 @EnableWebSecurity
@@ -33,9 +34,12 @@ public class SecurityConfig {
     @Bean
     @Order(2)
     public SecurityFilterChain securityfilterChain(HttpSecurity http) throws Exception {
+        http.csrf().disable();
         http.authorizeRequests()
-                .antMatchers(HttpMethod.GET,"/users/login").permitAll()
-                .anyRequest().authenticated()
+                // .antMatchers(HttpMethod.GET,"/users/login").permitAll()
+                .antMatchers("/**").permitAll()
+                // .anyRequest().authenticated()
+                .anyRequest().permitAll()
                 .and()
                 .formLogin().disable()
                 .csrf().disable()
@@ -57,8 +61,9 @@ public class SecurityConfig {
     @Bean
     @Order(1)
     public SecurityFilterChain exceptionSecurityFilterChain(HttpSecurity http) throws Exception {
+        http.csrf().disable();
         http
-                .authorizeHttpRequests((authorize) -> authorize.anyRequest().permitAll())
+                // .authorizeHttpRequests((authorize) -> authorize.anyRequest().permitAll())
                 .requestCache().disable()
                 .securityContext().disable()
                 .sessionManagement().disable();

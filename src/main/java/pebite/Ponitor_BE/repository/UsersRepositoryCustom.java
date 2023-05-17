@@ -1,4 +1,4 @@
-package pebite.Ponitor_BE.repository.users;
+package pebite.Ponitor_BE.repository;
 
 import pebite.Ponitor_BE.model.Users;
 
