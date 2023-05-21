@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Getter// 클래스내 getter 메소드 자동생성
 @NoArgsConstructor //기본 생성자 자동추가
 @Entity
+@Table(name="customer")
 public class Customer {
 
     @Id

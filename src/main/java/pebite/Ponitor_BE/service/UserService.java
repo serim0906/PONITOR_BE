@@ -6,7 +6,7 @@ import pebite.Ponitor_BE.security.JwtTokenProvider;
 import pebite.Ponitor_BE.dto.UsersLoginResDto;
 import pebite.Ponitor_BE.exception.AuthenticationException;
 import pebite.Ponitor_BE.model.Users;
-import pebite.Ponitor_BE.repository.UsersRepository;
+import pebite.Ponitor_BE.repository.users.UsersRepository;
 import pebite.Ponitor_BE.response.Message;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

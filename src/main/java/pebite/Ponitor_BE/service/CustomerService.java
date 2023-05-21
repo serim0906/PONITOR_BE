@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 import pebite.Ponitor_BE.dto.CustomerSaveRequestDto;
 import pebite.Ponitor_BE.dto.CustomerUpdateRequestDto;
 import pebite.Ponitor_BE.model.Customer;
-import pebite.Ponitor_BE.repository.CustomerRepository;
+import pebite.Ponitor_BE.repository.customer.CustomerRepository;
 
 @RequiredArgsConstructor
 @Service

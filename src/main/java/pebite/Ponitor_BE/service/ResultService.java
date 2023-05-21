@@ -1,11 +1,11 @@
 package pebite.Ponitor_BE.service;
 
-import lombok.NoArgsConstructor;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pebite.Ponitor_BE.dto.ResultSaveRequestDto;
-import pebite.Ponitor_BE.repository.ResultRepository;
+import pebite.Ponitor_BE.repository.result.ResultRepository;
 
 @RequiredArgsConstructor
 @Service
