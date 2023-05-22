@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartException;
 import org.springframework.web.multipart.MultipartFile;
+import pebite.Ponitor_BE.dto.EmoticDto;
 import pebite.Ponitor_BE.dto.VideosResDto;
 import pebite.Ponitor_BE.exception.ResourceNotFoundException;
 import pebite.Ponitor_BE.model.*;
@@ -153,6 +154,17 @@ public class VideoService {
 
             for (Videos video : videos) {
 
+                EmoticDto emotions = new EmoticDto(
+                        result.getAnger(),
+                        result.getAnnoyance(),
+                        result.getDisapproval(),
+                        result.getDisquietment(),
+                        result.getConfusion(),
+                        result.getSadness(),
+                        result.getSuffering(),
+                        result.getTotal()
+                );
+
                 VideosResDto videosResDto = VideosResDto.builder()
                         .customerId(customerId)
                         .startTime(customer.getStartTime().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")))
@@ -162,14 +174,7 @@ public class VideoService {
                         .filePath(video.getFilePath())
                         .withdraw(result.getWithdraw())
                         .phone(result.isPhone())  // boolean
-                        .anger(result.getAnger())
-                        .annoyance(result.getAnnoyance())
-                        .disapproval(result.getDisapproval())
-                        .disquietment(result.getDisquietment())
-                        .doubtConfusion(result.getDoubtConfusion())
-                        .sadness(result.getSadness())
-                        .suffering(result.getSuffering())
-                        .total(result.getTotal())
+                        .emotions(emotions)
                         .build();
 
                 videosResDtos.add(videosResDto);

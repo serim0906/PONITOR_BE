@@ -37,7 +37,7 @@ public class Result {
     private Long disquietment;
 
     @Column(nullable = true)
-    private Long doubtConfusion;
+    private Long confusion;
 
     @Column(nullable = true)
     private Long sadness;
@@ -50,7 +50,7 @@ public class Result {
 
     @Builder
     public Result(Long customerId, Long withdraw, boolean phone, Long anger, Long annoyance,
-                  Long disapproval, Long disquietment, Long doubtConfusion,  Long sadness,
+                  Long disapproval, Long disquietment, Long confusion,  Long sadness,
                   Long suffering, Long total){
         this.customerId = customerId;
         this.withdraw = withdraw;
@@ -59,9 +59,10 @@ public class Result {
         this.annoyance = annoyance;
         this.disapproval = disapproval;
         this.disquietment = disquietment;
-        this.doubtConfusion = doubtConfusion;
+        this.confusion = confusion;
         this.sadness = sadness;
         this.suffering = suffering;
         this.total = total;
     }
+
 }

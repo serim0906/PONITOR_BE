@@ -17,13 +17,13 @@ public class ResultSaveRequestDto {
     private Long annoyance;
     private Long disapproval;
     private Long disquietment;
-    private Long doubtConfusion;
+    private Long confusion;
     private Long sadness;
     private Long suffering;
     private Long total;
     @Builder
     public ResultSaveRequestDto (Long customerId, Long withdraw, boolean phone, Long anger, Long annoyance,
-                                 Long disapproval, Long disquietment, Long doubtConfusion,  Long sadness,
+                                 Long disapproval, Long disquietment, Long confusion,  Long sadness,
                                  Long suffering, Long total){
         this.customerId = customerId;
         this.withdraw = withdraw;
@@ -32,7 +32,7 @@ public class ResultSaveRequestDto {
         this.annoyance = annoyance;
         this.disapproval = disapproval;
         this.disquietment = disquietment;
-        this.doubtConfusion = doubtConfusion;
+        this.confusion = confusion;
         this.sadness = sadness;
         this.suffering = suffering;
         this.total = total;
@@ -44,7 +44,7 @@ public class ResultSaveRequestDto {
                 .customerId(customerId)
                 .withdraw(withdraw)
                 .phone(phone).anger(anger).annoyance(annoyance).disapproval(disapproval).disquietment(disquietment)
-                .doubtConfusion(doubtConfusion).sadness(sadness).suffering(suffering).total(total)
+                .confusion(confusion).sadness(sadness).suffering(suffering).total(total)
                 .build();
     }
 

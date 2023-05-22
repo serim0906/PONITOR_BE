@@ -16,14 +16,7 @@ public class VideosResDto {
     private String filePath;
     private Long withdraw;
     private Boolean phone;
-
-    private  Long anger;
-    private  Long annoyance;
-    private  Long disapproval;
-    private  Long disquietment;
-    private  Long doubtConfusion;
-    private  Long sadness;
-    private  Long suffering;
-    private  Long total;
+    private EmoticDto emotions;
 
 }
+
